@@ -77,6 +77,8 @@ jobs:
   deploy: 
     runs-on: ubuntu-latest
     needs: [build]
+    environment:
+      name: production
     steps:
       - name: deploy to ubuntu server
         uses: appleboy/ssh-action@master
