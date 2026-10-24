@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAST API</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">FAST API<span>.</span></div>
+
+        <div id="user-box" hidden>
+            <span id="user-email"></span>
+            <button id="logout-button" class="ghost" type="button">Sign out</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="auth-view" class="card auth-card">
+            <div class="tabs">
+                <button id="tab-login" class="tab active" type="button">Sign in</button>
+                <button id="tab-register" class="tab" type="button">Create account</button>
+            </div>
+
+            <form id="auth-form">
+                <label for="email">Email</label>
+                <input id="email" type="email" autocomplete="email" required>
+
+                <label for="password">Password</label>
+                <input id="password" type="password" autocomplete="current-password" required minlength="6">
+
+                <p id="auth-error" class="error" role="alert" hidden></p>
+
+                <button id="auth-submit" class="primary" type="submit">Sign in</button>
+            </form>
+        </section>
+
+        <section id="feed-view" hidden>
+            <form id="post-form" class="card">
+                <h2>Write something</h2>
+
+                <label for="post-title">Title</label>
+                <input id="post-title" type="text" maxlength="150" required>
+
+                <label for="post-content">What's on your mind?</label>
+                <textarea id="post-content" rows="4" required></textarea>
+
+                <p id="post-error" class="error" role="alert" hidden></p>
+
+                <button id="post-button" class="primary" type="submit">Post</button>
+            </form>
+
+            <input id="search" class="search" type="search" placeholder="Search posts by title...">
+
+            <div id="feed"></div>
+
+            <div class="pager">
+                <button id="prev-page" class="ghost" type="button">← Newer</button>
+                <span id="page-label">Page 1</span>
+                <button id="next-page" class="ghost" type="button">Older →</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
