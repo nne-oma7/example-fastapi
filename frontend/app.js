@@ -1,5 +1,5 @@
 // Change this to your deployed API address when the backend is live.
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "http://142.93.58.215";
 const PAGE_SIZE = 10;
 const TOKEN_KEY = "fastapi_token";
 const EMAIL_KEY = "fastapi_email";

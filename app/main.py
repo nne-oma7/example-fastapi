@@ -1,4 +1,5 @@
-
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
 from fastapi import FastAPI
 from . import models
 from .database import engine
@@ -29,6 +30,15 @@ app.include_router(post.router)
 app.include_router(users.router)
 app.include_router(auth.router)
 app.include_router(vote.router)
+
+FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
+
+if FRONTEND_DIR.is_dir():
+    app.mount(
+        "/app",
+        StaticFiles(directory=FRONTEND_DIR, html=True),
+        name="frontend"
+    )
 
 @app.get("/")
 def read_root():
